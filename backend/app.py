@@ -180,4 +180,4 @@ def get_articles():
             'author': 'Legal Team'
         }
     ]
-    return jsonify([])
+    return jsonify([articles])
