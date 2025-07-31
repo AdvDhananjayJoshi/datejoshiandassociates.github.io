@@ -7,7 +7,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, origins=['http://localhost:3000'])
+# Updated CORS for production
+CORS(app, origins=[
+    'http://localhost:3000', 
+    'https://datejoshiandassociates.com',
+    'https://www.datejoshiandassociates.com'
+])
 
 # Zoho Email configuration
 app.config['MAIL_SERVER'] = 'smtp.zoho.in'
@@ -174,5 +179,12 @@ def get_articles():
     ]
     return jsonify(articles)
 
+# Health check endpoint
+@app.route('/')
+def health_check():
+    return jsonify({'status': 'Date Joshi & Associates API is running'})
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    # Production configuration for Heroku
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
