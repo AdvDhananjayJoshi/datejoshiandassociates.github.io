@@ -1,0 +1,227 @@
+:root {
+    --primary-blue: #1e3a5f;
+    --medium-blue: #2c5282;
+    --light-blue: #4299e1;
+    --white: #ffffff;
+    --light-gray: #f7fafc;
+    --dark-gray: #2d3748;
+    --text-gray: #4a5568;
+    --border-gray: #e2e8f0;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+/* Disclaimer Popup Styles with direct colors */
+
+.disclaimer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    backdrop-filter: blur(3px);
+}
+
+.disclaimer-modal {
+    background: #ffffff;
+    /* Changed from var(--white) */
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 650px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: disclaimerFadeIn 0.3s ease-out;
+}
+
+.disclaimer-content h2 {
+    color: #1e3a5f;
+    /* Changed from var(--primary-blue) */
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #2c5282;
+    /* Changed from var(--medium-blue) */
+    padding-bottom: 1rem;
+}
+
+.disclaimer-text p {
+    margin-bottom: 1.2rem;
+    color: #4a5568;
+    /* Changed from var(--text-gray) */
+    font-size: 1rem;
+}
+
+.disclaimer-text strong {
+    color: #1e3a5f;
+    /* Changed from var(--primary-blue) */
+    font-weight: 600;
+}
+
+.disclaimer-text li {
+    margin-bottom: 1rem;
+    color: #4a5568;
+    /* Changed from var(--text-gray) */
+    line-height: 1.6;
+}
+
+.disclaimer-text a {
+    color: #2c5282;
+    /* Changed from var(--medium-blue) */
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.disclaimer-text a:hover {
+    color: #1e3a5f;
+    /* Changed from var(--primary-blue) */
+}
+
+.btn-accept {
+    background: #2c5282;
+    /* Changed from var(--medium-blue) */
+    color: #ffffff;
+    /* Changed from var(--white) */
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.btn-accept:hover {
+    background: #1e3a5f;
+    /* Changed from var(--primary-blue) */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(44, 82, 130, 0.3);
+}
+
+.btn-decline {
+    background: transparent;
+    color: #4a5568;
+    /* Changed from var(--text-gray) */
+    padding: 1rem 2rem;
+    border: 2px solid #e2e8f0;
+    /* Changed from var(--border-gray) */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.btn-decline:hover {
+    background: #e2e8f0;
+    /* Changed from var(--border-gray) */
+    color: #2d3748;
+    /* Changed from var(--dark-gray) */
+    transform: translateY(-2px);
+}
+
+
+/* Mobile Responsiveness */
+
+@media (max-width: 768px) {
+    .disclaimer-modal {
+        width: 95%;
+        max-height: 90vh;
+    }
+    .disclaimer-content {
+        padding: 1.5rem;
+    }
+    .disclaimer-content h2 {
+        font-size: 1.5rem;
+    }
+    .disclaimer-text {
+        font-size: 0.95rem;
+    }
+    .disclaimer-buttons {
+        flex-direction: column;
+    }
+    .btn-accept,
+    .btn-decline {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .disclaimer-content {
+        padding: 1rem;
+    }
+    .disclaimer-content h2 {
+        font-size: 1.3rem;
+    }
+    .disclaimer-text {
+        font-size: 0.9rem;
+    }
+    .disclaimer-text ul {
+        padding-left: 1rem;
+    }
+}
+
+
+/* Legal Pages Styling */
+
+.legal-section {
+    margin-bottom: 2rem;
+}
+
+.legal-section h2 {
+    border-left: 4px solid var(--medium-blue);
+    padding-left: 1rem;
+    margin-top: 2.5rem;
+}
+
+.legal-section p {
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.legal-section ul {
+    color: var(--text-gray);
+}
+
+.legal-section li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+
+/* Responsive adjustments for legal pages */
+
+@media (max-width: 768px) {
+    .legal-section h2 {
+        font-size: 1.3rem;
+    }
+    .legal-section p {
+        text-align: left;
+    }
+}
